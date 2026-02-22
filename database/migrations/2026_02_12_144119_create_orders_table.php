@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('total_price');
-            $table->string('status')->default('Menunggu Pembayaran');
-            $table->text('address');
+            $table->string('payment_method');
+            $table->string('status')->default('Menunggu Konfirmasi');
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }
