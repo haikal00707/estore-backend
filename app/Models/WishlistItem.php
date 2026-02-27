@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CartItem extends Model
+class WishlistItem extends Model
 {
-    protected $fillable = ['cart_id', 'product_id', 'quantity'];
+    protected $fillable = ['wishlist_id', 'product_id'];
 
-    public function cart()
+    public function wishlist()
     {
-        return $this->belongsTo(Cart::class);
+        return $this->belongsTo(Wishlist::class);
     }
 
     public function product()
